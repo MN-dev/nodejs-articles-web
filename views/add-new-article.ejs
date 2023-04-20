@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<!-- head -->
+<%- include("./partials/head") %>
+    <!--// head //-->
+
+    <body id="body">
+        <!-- header -->
+        <%- include("./partials/header") %>
+            <!--// header //-->
+
+            <div id="mydiv"></div>
+
+            <main id="main">
+                <section>
+                    <h1>Create new article</h1>
+                    <form method="post" action="/all-articles">
+                        <label for="">article title</label>
+                        <input type="text" name="title" id="title" required>
+                        <label for="">article summary</label>
+                        <input type="text" name="summary" id="summary">
+                        <label for="">article body</label>
+                        <textarea name="body" id="body"></textarea>
+                        <button class="create">create</button>
+                    </form>
+                </section>
+            </main>
+
+            <!-- footer -->
+            <%- include("./partials/footer") %>
+                <!--// footer  //-->
+    </body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<!-- head -->
+<%- include("./partials/head") %>
+  <!--// head //-->
+
+  <body id="body">
+    <!-- header -->
+    <%- include("./partials/header") %>
+      <!--// header //-->
+      <div id="mydiv"></div>
+      <main id="main">
+        <section>
+          <h1>articles</h1>
+
+          <div class="parent-of-articles">
+            <% AllArticles.forEach(item=> { %>
+              <article>
+                <h2>
+                  <%= item.title %>
+                </h2>
+                <p>
+                  <%= item.summary %>
+                    <br>
+                    <a class="btn" href="/all-articles/article-details/<%=item._id %>">show mnore</a>
+                </p>
+              </article>
+              <% }); %>
+          </div>
+        </section>
+      </main>
+
+      <!-- footer -->
+      <%- include("./partials/footer") %>
+        <!--// footer  //-->
+  </body>
+
+</html>

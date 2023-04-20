@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<!-- head -->
+<%- include("./partials/head") %>
+    <!--// head //-->
+
+    <body id="body">
+        <!-- header -->
+        <%- include("./partials/header") %>
+            <!--// header //-->
+
+            <div id="mydiv"></div>
+
+            <main id="main">
+                <section>
+                    <h1>
+                        <%= AllArticles.title %>
+                    </h1>
+                    <h2>
+                        <%= AllArticles.summary %>
+                    </h2>
+                    <p>
+                        <%= AllArticles.body %>
+                    </p>
+
+                    <button id="id" data-linkid="<%= AllArticles._id %>" class="create">delete article</button>
+                </section>
+            </main>
+
+            <!-- footer -->
+            <%- include("./partials/footer") %>
+                <!--// footer  //-->
+
+                <script>
+                    const btnelement = document.querySelector(".create");
+                    const articleId = btnelement.getAttribute("data-linkid")
+                    btnelement.addEventListener("click", (eo) => {
+                        fetch(`/all-articles/article-details/${articleId}`, { method: 'DELETE' }).then(Response => Response.json()).then(data => window.location.href = "/all-articles").catch((err) => {
+                            console.log(err)
+                        }
+                        )
+                    });
+
+
+                </script>
+    </body>
+
+</html>
