@@ -2,7 +2,7 @@
 
 const express = require("express");
 const app = express();
-const port = 8000;
+const port = process.env || 8000;
 const helmet = require("helmet");
 
 app.set("view engine", "ejs");
